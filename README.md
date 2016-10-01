@@ -6,6 +6,7 @@ Only for authenticated students.
 
  - Python 2 or above
  - BeautifulSoup 4
+ - lxml
  - Tkinter
  - tkMessageBox
  - tkFileDialog
