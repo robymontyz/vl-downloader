@@ -36,7 +36,7 @@ import vl_downloader as vl_dl
 TITLE_FONT = ("Helvetica", 18, "bold")
 SESSION = None
 URLS = []
-DL_PATH = os.path.expanduser('~/Downloads')
+DL_PATH = os.path.expanduser('~' + 'Downloads')
 
 
 class SampleApp(Tkinter.Tk):
