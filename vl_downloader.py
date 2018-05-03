@@ -81,13 +81,13 @@ def get_video_urls(s, _course_link):
     # get relative path to every lessons scraping the HTML
     page = s.get(_course_link)
     soup = BeautifulSoup(page.content, 'lxml')
-    for link in soup.find('ul', id="navbar_left_menu").find_all('li', id=""):
+    for link in soup.find('ul', {"class": "lezioni"}).find_all('li', id=""):
         for a in link.find_all("a"):
             lessons_list.append(a.get('href'))
 
     # get all the direct links to the videos (.mp4)
     for lesson in lessons_list:
-        page = s.get('https://didattica.polito.it/portal/pls/portal/' + lesson)
+        page = s.get('https://elearning.polito.it/gadgets/video/' + lesson)
         soup = BeautifulSoup(page.content, 'lxml')
         video_url = soup.find('source')['src']
         urls.append(video_url)
